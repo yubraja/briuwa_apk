@@ -6,8 +6,14 @@ class HomePage extends StatelessWidget{
   {
 
     return Scaffold(
-      appBar: AppBar(title: Text('Biruwa'),),
 
+      
+body: Column(children: [
+
+  BottomNavigationBar(items: [
+    BottomNavigationBarItem(icon:Icon(Icons.add ),)
+  ])
+]),
 
     );
   }
