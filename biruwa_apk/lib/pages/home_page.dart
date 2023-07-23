@@ -11,8 +11,12 @@ class HomePage extends StatelessWidget{
 body: Column(children: [
 
   BottomNavigationBar(items: [
-    BottomNavigationBarItem(icon:Icon(Icons.add ),)
-  ])
+    BottomNavigationBarItem(icon:Image.asset('../../assets/two_leave.jpg'),label: ' '),
+    BottomNavigationBarItem(icon: Icon(Icons.add),label: '  '),
+  ],
+  )
+
+  
 ]),
 
     );
