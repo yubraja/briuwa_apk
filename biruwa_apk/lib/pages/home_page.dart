@@ -50,13 +50,16 @@ class _HomePage
          
           
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart_checkout_outlined),
+            icon: Icon(Icons.shopping_cart),
             label: ' ',
           ),
          
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        // selectedItemColor: Colors.amber[800],
+        fixedColor: Colors.grey,
+
+        
         onTap: _onItemTapped,
       ),
     );
