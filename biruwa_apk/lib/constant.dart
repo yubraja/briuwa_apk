@@ -1,12 +1,10 @@
  import 'package:flutter/material.dart';
+ import './pages/plant_view_page.dart';
  
 const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);//we can reuse the same css context 
 const List<Widget> widgetOptions = <Widget>[
-    Text(
-      ' Two Leave',
-      style: optionStyle,
-    ),
+    PlantViewPage(),
     Text(
       ' Search',
       style: optionStyle,
