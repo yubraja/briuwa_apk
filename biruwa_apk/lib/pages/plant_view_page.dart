@@ -18,11 +18,11 @@ class _PlantViewPageState extends State<PlantViewPage> {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(children: [
-              buttonCreation('Recommend'),
-              buttonCreation('Top',),
-              buttonCreation('Popoular',),
-              buttonCreation('Indoor',),
-              buttonCreation('Outdoor',),
+              buttonCreation('Recommend',0),
+              buttonCreation('Top',1),
+              buttonCreation('Popoular',2),
+              buttonCreation('Indoor',3),
+              buttonCreation('Outdoor',4),
           
           
             ],),
@@ -36,10 +36,13 @@ class _PlantViewPageState extends State<PlantViewPage> {
     );
   }
 
- Widget buttonCreation(String label,) {
+ Widget buttonCreation(String label,int index) {
 
   return TextButton(onPressed: (){
 
+    setState(() {
+      
+    });
     
     
   }, child:Text(label),
