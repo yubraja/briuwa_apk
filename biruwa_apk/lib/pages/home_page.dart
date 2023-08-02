@@ -22,7 +22,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(items: [
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.shifting,
+        items: [
 
         BottomNavigationBarItem(icon: Icon(Icons.home),label: ' '),
         BottomNavigationBarItem(icon: Icon(Icons.search),label:' '),
@@ -38,6 +40,7 @@ class _HomePageState extends State<HomePage> {
       
       ),
       body: widgetOptions[_currentIndex],
+
       
     );
   }
