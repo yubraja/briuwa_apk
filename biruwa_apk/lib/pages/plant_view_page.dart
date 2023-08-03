@@ -18,7 +18,24 @@ class _PlantViewPageState extends State<PlantViewPage> {
       child: 
       Column(
         children: [
-          Container(child: Image.asset('assets/girl.png',width: 500,fit: BoxFit.cover,),width: double.infinity,),
+          Stack(
+            alignment: Alignment.topLeft,
+            
+            children:[ 
+              Container(child: Image.asset('assets/girl.png',width: 500,fit: BoxFit.cover,),width: double.infinity,),
+            Positioned(
+              top: 40,
+              right: 10,
+            
+              child: Container(
+                height: 50,
+                width: 50,
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),
+                color: Color.fromARGB(255, 19, 175, 100),),
+                child: Icon(Icons.notification_add),
+              ),
+            ),
+          ],),
 
 
           SingleChildScrollView(
