@@ -18,6 +18,8 @@ class _PlantViewPageState extends State<PlantViewPage> {
       child: 
       Column(
         children: [
+
+          //here image and notification bell icon is shown
           Stack(
             alignment: Alignment.topLeft,
             
@@ -31,7 +33,7 @@ class _PlantViewPageState extends State<PlantViewPage> {
                 height: 50,
                 width: 50,
                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),
-                color: Color.fromARGB(255, 19, 175, 100),),
+                color: Color.fromARGB(255, 25, 132, 80),),
                 child: Icon(Icons.notification_add),
               ),
             ),
