@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import '../model/showcase.dart';
 class PlantViewPage extends StatefulWidget {
    PlantViewPage({super.key});
 
@@ -10,11 +10,15 @@ class PlantViewPage extends StatefulWidget {
 class _PlantViewPageState extends State<PlantViewPage> {
 
   int selectedIndex=0;
+  
   @override
 
 
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Container(
+      
       child: 
       Column(
         children: [
@@ -53,20 +57,7 @@ class _PlantViewPageState extends State<PlantViewPage> {
                 buttonProvider('Outdoor', 4),
 
 
-               
-
-
-
-
-               
-
-
-
-                
-                
-                
-                
-                
+            
                 
                 
                 
@@ -77,7 +68,14 @@ class _PlantViewPageState extends State<PlantViewPage> {
                     
                     
             ],),
-          )
+          ),
+
+
+          //here the list of plants are shown
+
+          ShowCase(height: height, width: width)
+
+
 
 
 
@@ -87,30 +85,52 @@ class _PlantViewPageState extends State<PlantViewPage> {
     );
   }
 
-  Widget buttonProvider(String label, int index)
-  {
+  // Widget buttonProvider(String label, int index)
+  // {
     
-        return    Padding(
-                 padding: const EdgeInsets.all(10.0),
-                 child: GestureDetector(onTap: (){
-                  setState(() {
-                    selectedIndex=index;
-                  });
-                 }, child:Container(
-                  alignment: Alignment.center,
-                  height: 40,
-                  width: selectedIndex==index?120:80,
+  //       return    Padding(
+  //                padding: const EdgeInsets.all(10.0),
+  //                child: GestureDetector(onTap: (){
+  //                 setState(() {
+  //                   selectedIndex=index;
+  //                 });
+  //                }, child:Container(
+  //                 alignment: Alignment.center,
+  //                 height: 40,
+  //                 width: selectedIndex==index?120:80,
                
-                  child:Text(label),
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),
-                  color: selectedIndex==index?Color.fromARGB(255, 19, 175, 100):Colors.white,)
-                  ),
-                 ),
-               );
+  //                 child:Text(label),
+  //                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),
+  //                 color: selectedIndex==index?Color.fromARGB(255, 19, 175, 100):Colors.white,)
+  //                 ),
+  //                ),
+  //              );
 
 
 
-  }
+  // }
+
+
+  Widget buttonProvider(String label, int index) {
+  return GestureDetector(
+    onTap: () {
+      setState(() {
+        selectedIndex = index;
+      });
+    },
+    child: Material(
+      color: selectedIndex == index ? Color.fromARGB(255, 19, 175, 100) : Colors.white,
+      borderRadius: BorderRadius.circular(50),
+      child: Container(
+        alignment: Alignment.center,
+        height: 40,
+        width: selectedIndex == index ? 120 : 80,
+        child: Text(label),
+      ),
+    ),
+  );
+}
+
 
 
 
