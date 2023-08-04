@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../model/showcase.dart';
+import '../model/plant.dart'; 
 class PlantViewPage extends StatefulWidget {
    PlantViewPage({super.key});
 
@@ -73,8 +73,25 @@ class _PlantViewPageState extends State<PlantViewPage> {
 
           //here the list of plants are shown
 
-          ShowCase(height: height, width: width)
+          SingleChildScrollView(
+            child: Container(
+              height: height*0.38,
 
+              width:width,
+              child: GridView.builder(
+                itemCount: plant.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+                itemBuilder: (context, index){
+                  return Column(
+                    children: [
+                      Container(padding: EdgeInsets.all(20),height:height*0.45-200,child: Image.asset(plant[index].image,fit: BoxFit.contain)),
+        
+                   
+                    ],
+                  );
+                }),
+            ),
+          )
 
 
 
@@ -85,52 +102,30 @@ class _PlantViewPageState extends State<PlantViewPage> {
     );
   }
 
-  // Widget buttonProvider(String label, int index)
-  // {
+  Widget buttonProvider(String label, int index)
+  {
     
-  //       return    Padding(
-  //                padding: const EdgeInsets.all(10.0),
-  //                child: GestureDetector(onTap: (){
-  //                 setState(() {
-  //                   selectedIndex=index;
-  //                 });
-  //                }, child:Container(
-  //                 alignment: Alignment.center,
-  //                 height: 40,
-  //                 width: selectedIndex==index?120:80,
+        return    Padding(
+                 padding: const EdgeInsets.all(10.0),
+                 child: GestureDetector(onTap: (){
+                  setState(() {
+                    selectedIndex=index;
+                  });
+                 }, child:Container(
+                  alignment: Alignment.center,
+                  height: 40,
+                  width: selectedIndex==index?120:80,
                
-  //                 child:Text(label),
-  //                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),
-  //                 color: selectedIndex==index?Color.fromARGB(255, 19, 175, 100):Colors.white,)
-  //                 ),
-  //                ),
-  //              );
+                  child:Text(label),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),
+                  color: selectedIndex==index?Color.fromARGB(255, 19, 175, 100):Colors.white,)
+                  ),
+                 ),
+               );
 
 
 
-  // }
-
-
-  Widget buttonProvider(String label, int index) {
-  return GestureDetector(
-    onTap: () {
-      setState(() {
-        selectedIndex = index;
-      });
-    },
-    child: Material(
-      color: selectedIndex == index ? Color.fromARGB(255, 19, 175, 100) : Colors.white,
-      borderRadius: BorderRadius.circular(50),
-      child: Container(
-        alignment: Alignment.center,
-        height: 40,
-        width: selectedIndex == index ? 120 : 80,
-        child: Text(label),
-      ),
-    ),
-  );
-}
-
+  }
 
 
 
